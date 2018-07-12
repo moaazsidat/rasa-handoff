@@ -1,0 +1,5 @@
+-e git+https://github.com/RasaHQ/rasa_core.git@d63f55c44cd919d2031311201caa1c26c94cb365#egg=rasa_core
+rasa_nlu==0.12.0
+gspread==2.0.0
+oauth2client==4.1.2
+duckling==1.7.3
