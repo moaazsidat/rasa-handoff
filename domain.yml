@@ -1,32 +1,55 @@
-intents:
-  # add your intents
-  - greet
-  - thank
-  - bye
-  - deny
-  - affirm
-
-entities:
-  # replace with your entities
-  - example_entity
 
 slots:
-  # replace with your slots
-  example_slot:
+  location:
+    type: text
+  type:
+    type: text
+  origin: 
+    type: text
+  meetup_id: 
+    type: unfeaturized
+  next_event_id:
+    type: unfeaturized
+  lat: 
+    type: unfeaturized
+  lon:
     type: unfeaturized
 
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - thanks
+  - thanks+goodbye
+  - meetup
+  - ask_transport
+  - affirm+ask_transport
+  - deny
+
+entities:
+  - origin
+  - type
+  - location
+
 templates:
-  # templates the bot should respond with
   utter_greet:
     - "Hey, how can I help you?"
-  utter_thank:
-    - "You're welcome!"
-  utter_bye:
-    - "Goodbye"
+  utter_goodbye:
+    - "Talk to you later!"
+    - "Goodbye :)"
+    - "Bye!"
+    - "Have a great day"
+  utter_thanks:
+    - "You are very welcome!"
+    - "Glad I could help"
 
 actions:
-  # all the utter actions from the templates, plus any custom actions
   - utter_greet
-  - utter_thank
-  - utter_bye
-  - actions.ActionExample
+  - utter_goodbye
+  - utter_thanks
+  - actions.ActionMeetup
+  - actions.ActionJoinMeetup
+  - actions.ActionJoinEvent
+  - actions.ActionSuggestRoute
+  - actions.ActionSlotReset
+
