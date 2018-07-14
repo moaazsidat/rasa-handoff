@@ -20,13 +20,13 @@ pip install -r requirements.txt
 python -m spacy download en
 ```
 
-To run the bot you'll need to create an `.env` file and insert the following
+3. To run the bot you'll need to create an `.env` file and insert the following
 ```
 MEETUP_KEY=<meetup_api_key>
 GOOGLE_KEY=<google_directions_api_key>
 ```
-[Get Meetup API key here](https://secure.meetup.com/meetup_api/key/)
-[Activate Google Directions API and get API key](https://developers.google.com/maps/documentation/directions/start)
+- [Get Meetup API key here](https://secure.meetup.com/meetup_api/key/)
+- [Activate Google Directions API and get API key](https://developers.google.com/maps/documentation/directions/start)
 
 
 ## Usage
