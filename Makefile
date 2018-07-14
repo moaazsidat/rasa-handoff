@@ -20,10 +20,10 @@ clean:
 	rm -rf docs/_build
 
 train-nlu:
-	python -m rasa_nlu.train -c nlu_config.yml --data data/nlu_data.md -o models --fixed_model_name nlu --project current --verbose
+	python -m rasa_nlu.train -c nlu_config.yml --data data/nlu_data.md -o models --fixed_model_name nlu_model --project current --verbose
 
 train-core:
 	python -m rasa_core.train -d domain.yml -s data/stories.md -o models/current/dialogue --epochs 200
 
 cmdline:
-	python -m rasa_core.run -d models/current/dialogue -u models/current/nlu
+	python -m rasa_core.run -d models/current/dialogue -u models/current/nlu_model
