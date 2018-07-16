@@ -6,7 +6,7 @@ For more information on the Rasa Stack, please visit the docs here:
 
 This project is based on:
 - [Rasa Starter Pack](https://github.com/RasaHQ/starter-pack)
-- [Rasa Livestream TF Pipeline](https://github.com/RasaHQ/livestream-tf-pipeline)
+- [Rasa Livestream Tensorflow Pipeline](https://github.com/RasaHQ/livestream-tf-pipeline)
 
 ## Setup
 
