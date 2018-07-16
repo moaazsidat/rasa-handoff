@@ -9,6 +9,7 @@ This project is based on:
 - [Rasa Livestream Tensorflow Pipeline](https://github.com/RasaHQ/livestream-tf-pipeline)
 
 ## Setup
+_You can use `pyenv` to instantiate a virtual environment to run this project_
 
 1. Install the dependencies
 ```
@@ -36,3 +37,13 @@ To train the NLU model, run ``make train-nlu``
 To train the Core model, run ``make train-core``
 
 To run the bot on the command line run ``make cmdline``
+
+## HITL
+To run mock api:
+```
+python hitl-api/api.py
+```
+then ask the bot: "I'm looking for tech meetups in Toronto"
+
+### todo
+- [ ] resolve weird behaviour of chatbot responding with incorrect conversation upon resuming conversation when it was paused during hitl
