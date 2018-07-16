@@ -10,7 +10,7 @@ This project is based on:
 
 ## Setup
 
-1. Install the dependencies, run:
+1. Install the dependencies
 ```
 pip install -r requirements.txt
 ```
