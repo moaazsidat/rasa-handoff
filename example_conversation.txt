@@ -1,0 +1,29 @@
+(rasa365) rasa-prototype (master) $ make cmdline
+python -m rasa_core.run -d models/current/dialogue -u models/current/nlu_model
+Using TensorFlow backend.
+2018-07-12 21:38:39.186322: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Bot loaded. Type a message and press enter:
+hello
+Hey, how can I help you?
+I'm looking for tech meetups in hamburg
+There is a Hamburg Legal Tech Solutions - HandsOn Meetup meetup in hamburg. They are having an event called Legal Design Thinking - MVP Entwicklung on 2018-09-19 13:00:00. Would you like to join the meetup?
+no
+Have a great day
+hello
+Hey, how can I help you?
+I'm looking for python meetups in Toronto
+There is a Toronto Machine Learning Group R × Python meetup in toronto. They are having an event called Weekend project peer-help-peer clinic on 2018-07-14 14:00:00. Would you like to join the meetup?
+Yes
+Unfortunately only approved members can join this meetup
+hey
+Hey, how can I help you?
+i'm looking for tech meetups in toronto
+There is a Cryptobay meetup in toronto. They are having an event called How To Buy Bitcoin And Other Cryptos? Special Guest: Amelia Zheng, Coinsquare. on 2018-07-17 19:00:00. Would you like to join the meetup?
+yes
+Done! You have joined the meetup. Would you like to attend their nearest event?
+sure thing, can you also tell me how to get there from 77 Bloor Street West
+All done. I have booked you a spot at the event How To Buy Bitcoin And Other Cryptos? Special Guest: Amelia Zheng, Coinsquare. which is happening at 2018-07-17 19:00:00
+No problem.  Here are the directions for getting to the venue using a public transport: Walk to Bay St at Bloor St West. Bus towards 6 Bay to Queens Quay and Sherbourne. Walk to 600 Bay St, Toronto, ON M5G 1C3, Canada.
+Thanks!
+Glad I could help
+Have a great day
