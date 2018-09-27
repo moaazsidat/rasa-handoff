@@ -38,7 +38,7 @@ To train the Core model, run ``make train-core``
 
 To run the bot on the command line run ``make cmdline``
 
-## HITL
+## human-in-the-loop
 To run mock api:
 ```
 python hitl-api/api.py
