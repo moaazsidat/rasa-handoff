@@ -2,3 +2,4 @@ rasa_nlu==0.12.3
 rasa_core==0.9.6
 spacy==2.0.11
 requests==2.18.4
+sklearn_crfsuite
