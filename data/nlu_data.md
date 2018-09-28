@@ -34,6 +34,8 @@
 - please do
 - yes, please
 - yes for sure
+- please, yes
+- yes please
 
 ## intent: thanks
 - thanks
@@ -72,6 +74,7 @@
 - Need suggestions for [tech](type) meetups in [New York](location).
 - Looking for [music](type) meetups in [Toronto](location).
 - Give me suggestions on what [tech](type) meetups to attend in [New York](location).
+- I'm looking for [python](type) meetups in [Toronto](location)
 
 ## intent: ask_transport
 - I need directions for public transport of how to get there from [Queen's square](origin).
@@ -84,6 +87,7 @@
 - What are the directions to get to the venue from [King's Cross](origin)?
 - I need some guidance on how do I get to the venue. Leaving from [William's street 100](origin).
 - I will be be going there from [Baker Street](origin), can you give me directions of how to get to the venue?
+- How can I get there from [Dundas West Station](origin)?
 
 ## intent: affirm+ask_transport
 - Yes. How do I get there? Leaving from [Queen's street 175](origin). 
@@ -98,6 +102,7 @@
 - Yes, definitely. Can you please tell me how to get there using public transport? I will be leaving from [Green Park](origin).
 - Definitely. Can you tell me how could I get to the venue of the meetup? Starting my journey at [King's street, 16](origin).
 - Yes. Please, provide me the directions of how can I get to the venue? I will be going from [Marylebone](origin).
+- Yes, how can I get there from [Dundas West Station](origin)?
 
 ## intent: deny
 - No
@@ -106,3 +111,5 @@
 - Nooooo
 - No thanks
 - No, I don't
+- please, no
+- please no
