@@ -13,6 +13,11 @@
     - action_meetup
 
 
+## ask_human
+* ask_human
+    - action_talk_to_human
+
+
 ## thanks+goodbye
 * thanks+goodbye
     - utter_goodbye
@@ -34,6 +39,21 @@
 	- utter_goodbye
 	- action_slot_reset
 
+## talk_to_human_01
+* greet
+    - utter_greet
+* ask_human
+	- action_talk_to_human
+* thanks
+	- utter_thanks
+	- utter_goodbye
+	- action_slot_reset
+
+## talk_to_human_02
+* greet
+    - utter_greet
+* ask_human
+	- action_talk_to_human
 
 ## find_meetup_02
 * greet
@@ -67,6 +87,7 @@
 	- utter_thanks
 	- utter_goodbye
 	- action_slot_reset
+
 
 ## find_meetup_04
 * greet
@@ -110,6 +131,17 @@
 * thanks+goodbye
 	- utter_goodbye
 	- action_slot_reset
+
+
+## talk_to_human_03
+* greet
+    - utter_greet
+* ask_human
+	- action_talk_to_human
+* thanks+goodbye
+	- utter_thanks
+	- utter_goodbye
+	- action_slot_reset
 	
  
 ## story_09
@@ -142,6 +174,7 @@
 	- utter_goodbye
 	- action_slot_reset
 	
+
 ## find_meetup_11
 * greet
     - utter_greet
@@ -158,6 +191,15 @@
     - action_meetup
 * affirm
 	- action_join_meetup
+* goodbye
+	- utter_goodbye
+	- action_slot_reset
+
+## talk_to_human_04
+* greet
+    - utter_greet
+* ask_human
+	- action_talk_to_human
 * goodbye
 	- utter_goodbye
 	- action_slot_reset

@@ -24,6 +24,18 @@
 - Bye for now
 - Goodbye bot
 
+
+## intent: ask_human
+- Can I talk to a human
+- Let me talk to a human
+- Can I please talk to a human
+- I'd like to speak to your manager
+- Can I speak to a manager
+- Humans please
+- I don't like speaking to a robot
+- I need urgent help
+- I need help now
+
 ## intent: affirm
 - yes
 - yup

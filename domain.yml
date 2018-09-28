@@ -25,6 +25,7 @@ intents:
   - ask_transport
   - affirm+ask_transport
   - deny
+  - ask_human
 
 entities:
   - origin
@@ -52,4 +53,5 @@ actions:
   - actions.ActionJoinEvent
   - actions.ActionSuggestRoute
   - actions.ActionSlotReset
+  - actions.ActionTalkToHuman
 

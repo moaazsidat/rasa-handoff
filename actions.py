@@ -109,7 +109,7 @@ class ActionTalkToHuman(Action):
         return "action_talk_to_human"
 
     def run(self, dispatcher, tracker, domain):
-        response = "Reaching out to a human agent..."
+        response = "Reaching out to a human agent [{}]...".format(tracker.sender_id)
         dispatcher.utter_message(response)
 
         """
@@ -121,6 +121,7 @@ class ActionTalkToHuman(Action):
         message = ""
         while message != "/unpause":
             url = "http://127.0.0.1:5000/handoff/{}".format(tracker.sender_id)
+            dispatcher.utter_message(url)
             req = requests.get(url)
             resp = json.loads(req.text)
             if "error" in resp:
