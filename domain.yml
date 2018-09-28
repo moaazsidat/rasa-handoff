@@ -48,10 +48,10 @@ actions:
   - utter_greet
   - utter_goodbye
   - utter_thanks
-  - actions.ActionMeetup
-  - actions.ActionJoinMeetup
-  - actions.ActionJoinEvent
-  - actions.ActionSuggestRoute
-  - actions.ActionSlotReset
-  - actions.ActionTalkToHuman
+  - action_meetup
+  - action_join_meetup
+  - action_join_event
+  - action_suggest_route
+  - action_slot_reset
+  - action_talk_to_human
 

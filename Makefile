@@ -26,4 +26,4 @@ train-core:
 	python -m rasa_core.train -d domain.yml -s data/stories.md -o models/current/dialogue --epochs 200
 
 cmdline:
-	python -m rasa_core.run -d models/current/dialogue -u models/current/nlu_model
+	python -m rasa_core.run --enable_api -d models/current/dialogue -u models/current/nlu_model --port 5004 --credentials credentials.yml
