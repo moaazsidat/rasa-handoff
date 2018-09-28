@@ -1,4 +1,7 @@
-# rasa-prototype
+# rasa-handoff
+
+Experients with enabling human handoff in Rasa
+
 
 For more information on the Rasa Stack, please visit the docs here:
 - [Rasa Core](https://core.rasa.com/)
