@@ -1,0 +1,862 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greet",
+        "text": "Hi"
+      },
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "heya"
+      },
+      {
+        "intent": "greet",
+        "text": "Hello"
+      },
+      {
+        "intent": "greet",
+        "text": "What's up"
+      },
+      {
+        "intent": "greet",
+        "text": "Heya"
+      },
+      {
+        "intent": "greet",
+        "text": "Greetings"
+      },
+      {
+        "intent": "greet",
+        "text": "Good  morning"
+      },
+      {
+        "intent": "greet",
+        "text": "Good afternoon"
+      },
+      {
+        "intent": "greet",
+        "text": "Good evening"
+      },
+      {
+        "intent": "greet",
+        "text": "Hey sir"
+      },
+      {
+        "intent": "greet",
+        "text": "Hi person"
+      },
+      {
+        "intent": "greet",
+        "text": "Hey robot"
+      },
+      {
+        "intent": "greet",
+        "text": "Hello bot"
+      },
+      {
+        "intent": "goodbye",
+        "text": "Bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "Goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "Talk to you later"
+      },
+      {
+        "intent": "goodbye",
+        "text": "See you"
+      },
+      {
+        "intent": "goodbye",
+        "text": "See you later"
+      },
+      {
+        "intent": "goodbye",
+        "text": "Bye bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "Bye for now"
+      },
+      {
+        "intent": "goodbye",
+        "text": "Goodbye bot"
+      },
+      {
+        "intent": "ask_human",
+        "text": "Can I talk to a human"
+      },
+      {
+        "intent": "ask_human",
+        "text": "Let me talk to a human"
+      },
+      {
+        "intent": "ask_human",
+        "text": "Can I please talk to a human"
+      },
+      {
+        "intent": "ask_human",
+        "text": "I'd like to speak to your manager"
+      },
+      {
+        "intent": "ask_human",
+        "text": "Can I speak to a manager"
+      },
+      {
+        "intent": "ask_human",
+        "text": "Humans please"
+      },
+      {
+        "intent": "ask_human",
+        "text": "I don't like speaking to a robot"
+      },
+      {
+        "intent": "ask_human",
+        "text": "I need urgent help"
+      },
+      {
+        "intent": "ask_human",
+        "text": "I need help now"
+      },
+      {
+        "intent": "affirm",
+        "text": "yes"
+      },
+      {
+        "intent": "affirm",
+        "text": "yup"
+      },
+      {
+        "intent": "affirm",
+        "text": "yes, that sounds good"
+      },
+      {
+        "intent": "affirm",
+        "text": "sure"
+      },
+      {
+        "intent": "affirm",
+        "text": "definitely"
+      },
+      {
+        "intent": "affirm",
+        "text": "absolutely"
+      },
+      {
+        "intent": "affirm",
+        "text": "please do"
+      },
+      {
+        "intent": "affirm",
+        "text": "yes, please"
+      },
+      {
+        "intent": "affirm",
+        "text": "yes for sure"
+      },
+      {
+        "intent": "affirm",
+        "text": "please, yes"
+      },
+      {
+        "intent": "affirm",
+        "text": "yes please"
+      },
+      {
+        "intent": "thanks",
+        "text": "thanks"
+      },
+      {
+        "intent": "thanks",
+        "text": "thank you"
+      },
+      {
+        "intent": "thanks",
+        "text": "Thanks a lot"
+      },
+      {
+        "intent": "thanks",
+        "text": "Thanks a bunch"
+      },
+      {
+        "intent": "thanks",
+        "text": "Thank you very much"
+      },
+      {
+        "intent": "thanks",
+        "text": "Thank you so much"
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "Awesome. Talk to you later!"
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "Thanks. Bye for now"
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "Awesome, bye bye"
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "That's great. Goodbye."
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "Perfect. Talk to you later"
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "Thanks! Goodbye"
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "Thank you very much. Talk to you later"
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "Thanks a lot. Bye for now"
+      },
+      {
+        "intent": "thanks+goodbye",
+        "text": "Thanks bot. Goodbye"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 51,
+            "end": 55,
+            "value": "Oslo",
+            "entity": "location"
+          }
+        ],
+        "text": "I am new to the area. What meetups I could join in Oslo?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 16,
+            "end": 20,
+            "value": "Riga",
+            "entity": "location"
+          },
+          {
+            "start": 47,
+            "end": 53,
+            "value": "poetry",
+            "entity": "type"
+          }
+        ],
+        "text": "Just arrived at Riga. Can you suggest any cool poetry meetups for me?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 14,
+            "end": 20,
+            "value": "London",
+            "entity": "location"
+          },
+          {
+            "start": 49,
+            "end": 53,
+            "value": "tech",
+            "entity": "type"
+          }
+        ],
+        "text": "Just moved to London and would like to join some tech meetups. Any suggestions?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 12,
+            "end": 18,
+            "value": "London",
+            "entity": "location"
+          }
+        ],
+        "text": "I am new to London. Can you suggest any cool meetups I could attend?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 23,
+            "end": 29,
+            "value": "Berlin",
+            "entity": "location"
+          },
+          {
+            "start": 36,
+            "end": 42,
+            "value": "sports",
+            "entity": "type"
+          }
+        ],
+        "text": "I have just arrived at Berlin. What sports meetups I could attend here?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 14,
+            "end": 21,
+            "value": "writing",
+            "entity": "type"
+          },
+          {
+            "start": 36,
+            "end": 43,
+            "value": "Vilnius",
+            "entity": "location"
+          }
+        ],
+        "text": "Looking for a writing meetup in the Vilnius area."
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "dance",
+            "entity": "type"
+          },
+          {
+            "start": 36,
+            "end": 42,
+            "value": "Dublin",
+            "entity": "location"
+          }
+        ],
+        "text": "Are there any good dance meetups in Dublin?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 35,
+            "end": 40,
+            "value": "Paris",
+            "entity": "location"
+          }
+        ],
+        "text": "Any [tech]meetups worth joining in Paris?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 39,
+            "end": 46,
+            "value": "singing",
+            "entity": "type"
+          },
+          {
+            "start": 67,
+            "end": 75,
+            "value": "Budapest",
+            "entity": "location"
+          }
+        ],
+        "text": "Would love to get some suggestions for singing meetups to go to in Budapest."
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 12,
+            "end": 21,
+            "value": "community",
+            "entity": "type"
+          },
+          {
+            "start": 41,
+            "end": 49,
+            "value": "New York",
+            "entity": "location"
+          }
+        ],
+        "text": "Looking for community meetups to join in New York."
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 5,
+            "end": 9,
+            "value": "tech",
+            "entity": "type"
+          },
+          {
+            "start": 30,
+            "end": 37,
+            "value": "Toronto",
+            "entity": "location"
+          }
+        ],
+        "text": "What tech meetups are good in Toronto?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 23,
+            "end": 29,
+            "value": "Boston",
+            "entity": "location"
+          },
+          {
+            "start": 47,
+            "end": 51,
+            "value": "tech",
+            "entity": "type"
+          }
+        ],
+        "text": "I have just arrived to Boston. Suggest me what tech meetups I could joined here?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 12,
+            "end": 18,
+            "value": "sports",
+            "entity": "type"
+          },
+          {
+            "start": 30,
+            "end": 37,
+            "value": "Vilnius",
+            "entity": "location"
+          }
+        ],
+        "text": "Looking for sports meetups in Vilnius area."
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 4,
+            "end": 9,
+            "value": "music",
+            "entity": "type"
+          },
+          {
+            "start": 48,
+            "end": 53,
+            "value": "Paris",
+            "entity": "location"
+          }
+        ],
+        "text": "Any music meetups you can suggest me to join in Paris?"
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 21,
+            "end": 25,
+            "value": "tech",
+            "entity": "type"
+          },
+          {
+            "start": 37,
+            "end": 45,
+            "value": "New York",
+            "entity": "location"
+          }
+        ],
+        "text": "Need suggestions for tech meetups in New York."
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "music",
+            "entity": "type"
+          },
+          {
+            "start": 29,
+            "end": 36,
+            "value": "Toronto",
+            "entity": "location"
+          }
+        ],
+        "text": "Looking for music meetups in Toronto."
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 28,
+            "end": 32,
+            "value": "tech",
+            "entity": "type"
+          },
+          {
+            "start": 54,
+            "end": 62,
+            "value": "New York",
+            "entity": "location"
+          }
+        ],
+        "text": "Give me suggestions on what tech meetups to attend in New York."
+      },
+      {
+        "intent": "meetup",
+        "entities": [
+          {
+            "start": 16,
+            "end": 22,
+            "value": "python",
+            "entity": "type"
+          },
+          {
+            "start": 34,
+            "end": 41,
+            "value": "Toronto",
+            "entity": "location"
+          }
+        ],
+        "text": "I'm looking for python meetups in Toronto"
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 64,
+            "end": 78,
+            "value": "Queen's square",
+            "entity": "origin"
+          }
+        ],
+        "text": "I need directions for public transport of how to get there from Queen's square."
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 65,
+            "end": 87,
+            "value": "Rasa Technologies GmbH",
+            "entity": "origin"
+          }
+        ],
+        "text": "Can you tell me what is the easiest way to get to the venue from Rasa Technologies GmbH?"
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 61,
+            "end": 71,
+            "value": "Green Park",
+            "entity": "origin"
+          }
+        ],
+        "text": "Tell me the directions to get there. Starting the journey at Green Park."
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 80,
+            "end": 97,
+            "value": "Alexanderplatz 40",
+            "entity": "origin"
+          }
+        ],
+        "text": "Do you know how I should get to the venue of the meetup? I will be leaving from Alexanderplatz 40."
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 68,
+            "end": 83,
+            "value": "Hussitenstr. 75",
+            "entity": "origin"
+          }
+        ],
+        "text": "Can you tell me how to get to the venue? I will be going there from Hussitenstr. 75."
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 37,
+            "end": 66,
+            "value": "Grunerstraße 20, 10179 Berlin",
+            "entity": "origin"
+          }
+        ],
+        "text": "What is a good way to get there from Grunerstraße 20, 10179 Berlin?"
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 31,
+            "end": 45,
+            "value": "Alexanderplatz",
+            "entity": "origin"
+          }
+        ],
+        "text": "How do I get to the venue from Alexanderplatz?"
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 49,
+            "end": 61,
+            "value": "King's Cross",
+            "entity": "origin"
+          }
+        ],
+        "text": "What are the directions to get to the venue from King's Cross?"
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 64,
+            "end": 84,
+            "value": "William's street 100",
+            "entity": "origin"
+          }
+        ],
+        "text": "I need some guidance on how do I get to the venue. Leaving from William's street 100."
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 30,
+            "end": 42,
+            "value": "Baker Street",
+            "entity": "origin"
+          }
+        ],
+        "text": "I will be be going there from Baker Street, can you give me directions of how to get to the venue?"
+      },
+      {
+        "intent": "ask_transport",
+        "entities": [
+          {
+            "start": 25,
+            "end": 44,
+            "value": "Dundas West Station",
+            "entity": "origin"
+          }
+        ],
+        "text": "How can I get there from Dundas West Station?"
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 38,
+            "end": 56,
+            "value": "Queen's street 175",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes. How do I get there? Leaving from Queen's street 175."
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 52,
+            "end": 74,
+            "value": "Rasa Technologies GmbH",
+            "entity": "origin"
+          }
+        ],
+        "text": "Sounds good. Do you know how I could get there from Rasa Technologies GmbH?"
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 37,
+            "end": 49,
+            "value": "Canary Wharf",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes, please. How do I get there from Canary Wharf?"
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 90,
+            "end": 94,
+            "value": ". 70",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes, sure! I also need directions on how to get there? I think I will be going there from . 70."
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 90,
+            "end": 108,
+            "value": "Elizabeth's Avenue",
+            "entity": "origin"
+          }
+        ],
+        "text": "Sure, sounds good. Can you tell the best way to get to the venue if I would be going from Elizabeth's Avenue?"
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 66,
+            "end": 94,
+            "value": "Gendarmenmarkt, 10117 Berlin",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes! Can you also recommend me the route to get to the venue from Gendarmenmarkt, 10117 Berlin?"
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 97,
+            "end": 111,
+            "value": "Berkley street",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes, sure. Also, can you tell me what is the fastest way to get to the venue of the meetup? From Berkley street."
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 81,
+            "end": 110,
+            "value": "Marheinekepl. 1, 10961 Berlin",
+            "entity": "origin"
+          }
+        ],
+        "text": "Sure. Give me some directions on how should get there. Planning to be going from Marheinekepl. 1, 10961 Berlin?"
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 58,
+            "end": 76,
+            "value": "Old Street, London",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes, thanks. I wonder, how should I get to the venue from Old Street, London?"
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 104,
+            "end": 114,
+            "value": "Green Park",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes, definitely. Can you please tell me how to get there using public transport? I will be leaving from Green Park."
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 95,
+            "end": 112,
+            "value": "King's street, 16",
+            "entity": "origin"
+          }
+        ],
+        "text": "Definitely. Can you tell me how could I get to the venue of the meetup? Starting my journey at King's street, 16."
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 91,
+            "end": 101,
+            "value": "Marylebone",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes. Please, provide me the directions of how can I get to the venue? I will be going from Marylebone."
+      },
+      {
+        "intent": "affirm+ask_transport",
+        "entities": [
+          {
+            "start": 30,
+            "end": 49,
+            "value": "Dundas West Station",
+            "entity": "origin"
+          }
+        ],
+        "text": "Yes, how can I get there from Dundas West Station?"
+      },
+      {
+        "intent": "deny",
+        "text": "No"
+      },
+      {
+        "intent": "deny",
+        "text": "Nope"
+      },
+      {
+        "intent": "deny",
+        "text": "Don't think so"
+      },
+      {
+        "intent": "deny",
+        "text": "Nooooo"
+      },
+      {
+        "intent": "deny",
+        "text": "No thanks"
+      },
+      {
+        "intent": "deny",
+        "text": "No, I don't"
+      },
+      {
+        "intent": "deny",
+        "text": "please, no"
+      },
+      {
+        "intent": "deny",
+        "text": "please no"
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/moaaz/development/dialogue/experiments/hackathon_2018/rasa-prototype/models/current/nlu_model/intent_classifier_tensorflow_embedding.ckpt"
+all_model_checkpoint_paths: "/Users/moaaz/development/dialogue/experiments/hackathon_2018/rasa-prototype/models/current/nlu_model/intent_classifier_tensorflow_embedding.ckpt"
