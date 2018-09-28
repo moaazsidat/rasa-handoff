@@ -61,45 +61,6 @@ class ActionMeetup(Action):
         return [SlotSet("meetup_id", url_name), SlotSet("next_event_id", next_event_id)]
 
 
-# class ActionMeetup(Action):
-#     """
-# 	human in the loop version of ActionMeetup
-# 	"""
-
-#     def name(self):
-#         return "action_meetup"
-
-#     def run(self, dispatcher, tracker, domain):
-#         print(self.name(), tracker)
-#         # get slot data
-#         location = tracker.get_slot("location")
-#         type = tracker.get_slot("type")
-
-#         response = "passing info to human – location: {}, type: {}".format(
-#             location, type
-#         )
-#         dispatcher.utter_message(response)
-
-#         """
-# 		seems like rasa will stop listening once conversation
-# 		is paused, which means no actions are attempted, therefore
-# 		preventing triggering ConversationResumed() in a straightforward way.
-# 		"""
-#         tracker.update(ConversationPaused())
-#         url = "http://127.0.0.1:5000/meetup/{}/{}".format(location, type)
-#         req = requests.get(url)
-#         resp = json.loads(req.text)
-#         if "error" not in resp:
-#             resp_message = "meetups found with ids: {}".format(resp["meetup_id"])
-#             dispatcher.utter_message(resp_message)
-#         tracker.update(ConversationResumed())
-
-#         """
-# 		I'm looking for tech meetups in Toronto
-# 		"""
-#         # return [ConversationPaused()]
-
-
 class ActionTalkToHuman(Action):
     """
 	human in the loop action
@@ -121,13 +82,13 @@ class ActionTalkToHuman(Action):
         message = ""
         while message != "/unpause":
             url = "http://127.0.0.1:5000/handoff/{}".format(tracker.sender_id)
-            dispatcher.utter_message(url)
             req = requests.get(url)
             resp = json.loads(req.text)
             if "error" in resp:
                 raise Exception("Error fetching message: " + repr(resp["error"]))
             message = resp["message"]
-            dispatcher.utter_message("Human agent: {}".format(message))
+            if message != "/unpause":
+                dispatcher.utter_message("Human agent: {}".format(message))
 
         tracker.update(ConversationResumed())
 
@@ -137,7 +98,6 @@ class ActionJoinMeetup(Action):
         return "action_join_meetup"
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name(), tracker)
         meetup_id = tracker.get_slot("meetup_id")
 
         r = requests.post(
@@ -166,7 +126,6 @@ class ActionJoinEvent(Action):
         return "action_join_event"
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name(), tracker)
         next_event_id = tracker.get_slot("next_event_id")
 
         r = requests.post(
@@ -203,7 +162,6 @@ class ActionSuggestRoute(Action):
         return "action_suggest_route"
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name(), tracker)
         origin = tracker.get_slot("origin")
         lon = tracker.get_slot("lon")
         lat = tracker.get_slot("lat")
@@ -238,5 +196,4 @@ class ActionSlotReset(Action):
         return "action_slot_reset"
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name(), tracker)
         return [AllSlotsReset()]
