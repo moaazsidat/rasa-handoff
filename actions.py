@@ -78,21 +78,23 @@ class ActionTalkToHuman(Action):
 		is paused, which means no actions are attempted, therefore
 		preventing triggering ConversationResumed() in a straightforward way.
 		"""
+        dispatcher.utter_message("Hi, I'm a human")
+        return [ConversationPaused()]
         # tracker.update(ConversationPaused())
-        tracker._paused = True
-        message = ""
-        while message != "/unpause":
-            url = "http://127.0.0.1:5000/handoff/{}".format(tracker.sender_id)
-            req = requests.get(url)
-            resp = json.loads(req.text)
-            if "error" in resp:
-                raise Exception("Error fetching message: " + repr(resp["error"]))
-            message = resp["message"]
-            print("message received: ", message)
-            if message != "/unpause":
-                dispatcher.utter_message("Human agent: {}".format(message))
 
-        tracker._paused = False
+        # message = ""
+        # while message != "/unpause":
+        #     url = "http://127.0.0.1:5000/handoff/{}".format(tracker.sender_id)
+        #     req = requests.get(url)
+        #     resp = json.loads(req.text)
+        #     if "error" in resp:
+        #         raise Exception("Error fetching message: " + repr(resp["error"]))
+        #     message = resp["message"]
+        #     print("message received: ", message)
+        #     if message != "/unpause":
+        #         dispatcher.utter_message("Human agent: {}".format(message))
+
+        # tracker._paused = False
         # tracker.update(ConversationResumed())
 
 
