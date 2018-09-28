@@ -22,54 +22,94 @@ env_path = Path(".") / ".env"
 load_dotenv(dotenv_path=env_path)
 
 
-# class ActionMeetup(Action):
-# 	def name(self):
-# 		return 'action_meetup'
-
-# 	def run(self, dispatcher, tracker, domain):
-# 		# get slot data
-# 		location = tracker.get_slot('location')
-# 		type = tracker.get_slot('type')
-
-# 		r = requests.get('https://api.meetup.com/find/groups?key={}&location={}&text={}&upcoming_events=true'.format(os.environ['MEETUP_KEY'], location, type))
-# 		response = json.loads(r.text)
-
-#     # get a random meetup from the list returned by the api
-# 		meetup = response[randint(0,len(response)-1)]
-
-# 		meetup_name = meetup['name']
-# 		url_name = meetup['urlname']
-# 		next_event = meetup['next_event']
-# 		next_event_id = meetup['next_event']['id']
-# 		next_event_name = meetup['next_event']['name']
-# 		next_event_time = meetup['next_event']['time']/1000
-# 		next_event_time1 = datetime.datetime.fromtimestamp(int(next_event_time)).strftime('%Y-%m-%d %H:%M:%S')
-
-# 		response = "There is a {} meetup in {}. They are having an event called {} on {}. Would you like to join the meetup?".format(meetup_name, location, next_event_name, next_event_time1)
-
-# 		dispatcher.utter_message(response)
-
-#     # set slot data
-# 		return [SlotSet('meetup_id',url_name), SlotSet('next_event_id', next_event_id)]
-
-
 class ActionMeetup(Action):
-    """
-	human in the loop version of ActionMeetup
-	"""
-
     def name(self):
         return "action_meetup"
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name(), tracker)
         # get slot data
         location = tracker.get_slot("location")
         type = tracker.get_slot("type")
 
-        response = "passing info to human – location: {}, type: {}".format(
-            location, type
+        r = requests.get(
+            "https://api.meetup.com/find/groups?key={}&location={}&text={}&upcoming_events=true".format(
+                os.environ["MEETUP_KEY"], location, type
+            )
         )
+        response = json.loads(r.text)
+
+        # get a random meetup from the list returned by the api
+        meetup = response[randint(0, len(response) - 1)]
+
+        meetup_name = meetup["name"]
+        url_name = meetup["urlname"]
+        next_event = meetup["next_event"]
+        next_event_id = meetup["next_event"]["id"]
+        next_event_name = meetup["next_event"]["name"]
+        next_event_time = meetup["next_event"]["time"] / 1000
+        next_event_time1 = datetime.datetime.fromtimestamp(
+            int(next_event_time)
+        ).strftime("%Y-%m-%d %H:%M:%S")
+
+        response = "There is a {} meetup in {}. They are having an event called {} on {}. Would you like to join the meetup?".format(
+            meetup_name, location, next_event_name, next_event_time1
+        )
+
+        dispatcher.utter_message(response)
+
+        # set slot data
+        return [SlotSet("meetup_id", url_name), SlotSet("next_event_id", next_event_id)]
+
+
+# class ActionMeetup(Action):
+#     """
+# 	human in the loop version of ActionMeetup
+# 	"""
+
+#     def name(self):
+#         return "action_meetup"
+
+#     def run(self, dispatcher, tracker, domain):
+#         print(self.name(), tracker)
+#         # get slot data
+#         location = tracker.get_slot("location")
+#         type = tracker.get_slot("type")
+
+#         response = "passing info to human – location: {}, type: {}".format(
+#             location, type
+#         )
+#         dispatcher.utter_message(response)
+
+#         """
+# 		seems like rasa will stop listening once conversation
+# 		is paused, which means no actions are attempted, therefore
+# 		preventing triggering ConversationResumed() in a straightforward way.
+# 		"""
+#         tracker.update(ConversationPaused())
+#         url = "http://127.0.0.1:5000/meetup/{}/{}".format(location, type)
+#         req = requests.get(url)
+#         resp = json.loads(req.text)
+#         if "error" not in resp:
+#             resp_message = "meetups found with ids: {}".format(resp["meetup_id"])
+#             dispatcher.utter_message(resp_message)
+#         tracker.update(ConversationResumed())
+
+#         """
+# 		I'm looking for tech meetups in Toronto
+# 		"""
+#         # return [ConversationPaused()]
+
+
+class ActionTalkToHuman(Action):
+    """
+	human in the loop action
+	"""
+
+    def name(self):
+        return "action_talk_to_human"
+
+    def run(self, dispatcher, tracker, domain):
+        response = "Reaching out to a human agent..."
         dispatcher.utter_message(response)
 
         """
@@ -78,18 +118,17 @@ class ActionMeetup(Action):
 		preventing triggering ConversationResumed() in a straightforward way.
 		"""
         tracker.update(ConversationPaused())
-        url = "http://127.0.0.1:5000/meetup/{}/{}".format(location, type)
-        req = requests.get(url)
-        resp = json.loads(req.text)
-        if "error" not in resp:
-            resp_message = "meetups found with ids: {}".format(resp["meetup_id"])
-            dispatcher.utter_message(resp_message)
-        tracker.update(ConversationResumed())
+        message = ""
+        while message != "/unpause":
+            url = "http://127.0.0.1:5000/handoff/{}".format(tracker.sender_id)
+            req = requests.get(url)
+            resp = json.loads(req.text)
+            if "error" in resp:
+                raise Exception("Error fetching message: " + repr(resp["error"]))
+            message = resp["message"]
+            dispatcher.utter_message("Human agent: {}".format(message))
 
-        """
-		I'm looking for tech meetups in Toronto
-		"""
-        # return [ConversationPaused()]
+        tracker.update(ConversationResumed())
 
 
 class ActionJoinMeetup(Action):
