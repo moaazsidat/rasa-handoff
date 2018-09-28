@@ -2,8 +2,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import unicode_literals
 
-from rasa_core.actions.action import Action
-from rasa_core.events import (
+from rasa_core_sdk import Action
+from rasa_core_sdk.events import (
     SlotSet,
     AllSlotsReset,
     ConversationPaused,
@@ -78,7 +78,8 @@ class ActionTalkToHuman(Action):
 		is paused, which means no actions are attempted, therefore
 		preventing triggering ConversationResumed() in a straightforward way.
 		"""
-        tracker.update(ConversationPaused())
+        # tracker.update(ConversationPaused())
+        tracker._paused = True
         message = ""
         while message != "/unpause":
             url = "http://127.0.0.1:5000/handoff/{}".format(tracker.sender_id)
@@ -87,10 +88,12 @@ class ActionTalkToHuman(Action):
             if "error" in resp:
                 raise Exception("Error fetching message: " + repr(resp["error"]))
             message = resp["message"]
+            print("message received: ", message)
             if message != "/unpause":
                 dispatcher.utter_message("Human agent: {}".format(message))
 
-        tracker.update(ConversationResumed())
+        tracker._paused = False
+        # tracker.update(ConversationResumed())
 
 
 class ActionJoinMeetup(Action):
