@@ -24,7 +24,7 @@ functions as the chat layer for human <> human interaction within rasa
   while message != '/unpause':
     # get/wait on message from api 
     # pass message to chat context
-  
+    
   # message == unpause
   # unpause conversation
   ```
