@@ -62,6 +62,7 @@ class ActionMeetup(Action):
         return "action_meetup"
 
     def run(self, dispatcher, tracker, domain):
+        print(self.name(), tracker)
         # get slot data
         location = tracker.get_slot("location")
         type = tracker.get_slot("type")
@@ -199,4 +200,3 @@ class ActionSlotReset(Action):
     def run(self, dispatcher, tracker, domain):
         print(self.name(), tracker)
         return [AllSlotsReset()]
-
