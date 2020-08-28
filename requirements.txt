@@ -2,6 +2,6 @@ Flask==1.0.2
 python-dotenv
 rasa_nlu==0.12.3
 rasa_core==0.9.6
-requests==2.18.4
+requests==2.20.0
 sklearn_crfsuite
 spacy==2.0.11
