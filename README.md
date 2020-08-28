@@ -1,5 +1,7 @@
 # rasa-handoff
 
+**This is just a proof of concept**
+
 Experients with enabling human handoff in Rasa
 <img width="719" alt="screenshot 2018-09-28 11 14 53" src="https://user-images.githubusercontent.com/5963656/46217830-12149800-c311-11e8-8567-f3a26cf5fbea.png">
 
